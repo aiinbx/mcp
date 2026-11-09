@@ -2,7 +2,9 @@
 
 [AI Inbx](https://aiinbx.com) is an email API: sending and receiving on your domains and connected Gmail and Outlook mailboxes, threads, webhooks, suppressions and pacing. It runs two MCP servers, so an assistant in Claude, ChatGPT, Cursor, VS Code, Codex or any other MCP client can read threads, send, reply and schedule mail, set up domains and manage the rest of a workspace, or have an email address of its own.
 
-Both are remote servers (Streamable HTTP). There is nothing to install or run, and the first call opens a browser to sign in. This repository holds [`aiinbx-mcp`](#stdio-package), the stdio package for clients that start MCP servers as a command.
+Both are remote servers (Streamable HTTP). Use them if your client can connect to them: there is nothing to install or run, and the first call opens a browser to sign in.
+
+This repository holds [`aiinbx-mcp`](#stdio-package), the fallback for clients that can only start MCP servers as a command.
 
 ## Workspace server
 
@@ -153,7 +155,9 @@ The inbox server takes no API key: a key acts for its whole workspace, and an in
 
 ## Stdio package
 
-`aiinbx-mcp` is the workspace server over stdio, for a client that starts MCP servers as a command. It passes every message between the client and `https://mcp.aiinbx.com/mcp`, signed with your API key. The hosted server is the preferred way to connect; this package also works.
+Use the hosted server if your client can connect to it. This package is the fallback for clients that can only start MCP servers as a command.
+
+`aiinbx-mcp` is the workspace server over stdio. It passes every message between the client and `https://mcp.aiinbx.com/mcp`, signed with your API key.
 
 Create an [API key](https://docs.aiinbx.com/authentication) and give it to the command as `AI_INBX_API_KEY`:
 

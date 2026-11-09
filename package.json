@@ -1,7 +1,7 @@
 {
   "name": "aiinbx-mcp",
   "version": "2.0.1",
-  "description": "AI Inbx MCP server over stdio: send and receive email, threads, domains and webhooks from any MCP client, with an API key",
+  "description": "AI Inbx MCP server over stdio, the fallback for clients that can only start MCP servers as a command. If your client can connect to https://mcp.aiinbx.com/mcp, use that.",
   "homepage": "https://docs.aiinbx.com/mcp",
   "repository": {
     "type": "git",
