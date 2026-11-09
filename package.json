@@ -1,0 +1,46 @@
+{
+  "name": "aiinbx-mcp",
+  "version": "2.0.1",
+  "description": "AI Inbx MCP server over stdio: send and receive email, threads, domains and webhooks from any MCP client, with an API key",
+  "homepage": "https://docs.aiinbx.com/mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aiinbx/mcp.git"
+  },
+  "bugs": "https://github.com/aiinbx/mcp/issues",
+  "type": "module",
+  "bin": {
+    "mcp-server": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "bun build src/index.ts --target=node --outfile=dist/index.js",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "bun run typecheck && bun run test && bun run build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "aiinbx",
+    "mcp",
+    "mcp-server",
+    "modelcontextprotocol",
+    "email",
+    "email-api",
+    "inbound-email",
+    "ai-agents"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.1.0",
+    "@modelcontextprotocol/server": "2.1.0",
+    "@types/bun": "^1.4.0",
+    "typescript": "^6"
+  }
+}
